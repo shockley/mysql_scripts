@@ -17,7 +17,7 @@ begin
     FETCH cursor_id INTO v_user_id;
     while stop <> 1 do
         #get the a user_s registration and last_active date
-        # if they're null, set a noticiable value
+        # if theyre null, set a noticiable value
         select creation_date into v_reg_date from users where id = v_user_id;
         if v_reg_date is null then
             insert into v_debug (thekey,value) values ("v_reg_date",v_reg_date);
